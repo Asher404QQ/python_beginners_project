@@ -34,8 +34,8 @@ turtle.speed(PROJECTILE_SPEED)
 turtle.pendown()
 turtle.showturtle()
 
-angle = float(input("Введите угол направления:\n"))
-length = float(input("Введите длину полета снаряда:\n"))
+angle = turtle.numinput("Введите угол направления", "Введите угол направления")
+length = turtle.numinput("Введите длину полета снаряда", "Введите длину полета снаряда")
 
 turtle.setheading(angle)
 turtle.forward(length)
@@ -43,7 +43,7 @@ turtle.forward(length)
 if (TARGET_LLEFT_X <= turtle.xcor() <= TARGET_LLEFT_X + TARGET_WIDTH
         and TARGET_LLEFT_Y <= turtle.ycor() <= TARGET_LLEFT_Y + TARGET_WIDTH):
     print("Ты выиграл!")
+    turtle.numinput("Ты выиграл!", "Ты выиграл!", default=0)
 else:
     print("Ты проиграл!")
-
-turtle.done()
+    turtle.numinput("Ты проиграл!", "Ты проиграл!", default=0)
